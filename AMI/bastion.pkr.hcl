@@ -30,7 +30,6 @@ source "amazon-ebs" "terraform-bastion-prj-19" {
     value = "terraform-bastion-prj-19"
   }
 }
-
 # a build block invokes sources and runs provisioning steps on them.
 build {
   sources = ["source.amazon-ebs.terraform-bastion-prj-19"]
