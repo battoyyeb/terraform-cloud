@@ -1,12 +1,3 @@
-packer {
-  required_plugins {
-    amazon = {
-      version = ">=1.0.0"
-      source = "github.com/hashcorp/amazon"
-    }
-  }
-}
-
 variable "region" {
   type    = string
   default = "us-east-1"
