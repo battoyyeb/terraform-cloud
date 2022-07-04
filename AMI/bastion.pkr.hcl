@@ -28,7 +28,7 @@ source "amazon-ebs" "terraform-bastion-prj-19" {
   tag {
     key   = "Name"
     value = "terraform-bastion-prj-19"
-  }
+}
 }
 # a build block invokes sources and runs provisioning steps on them.
 build {
