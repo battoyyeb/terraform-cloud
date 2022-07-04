@@ -3,7 +3,9 @@ variable "region" {
   default = "us-east-1"
 }
 
-locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
+locals { 
+  timestamp = regex_replace(timestamp(), "[- TZ:]", "") 
+  }
 
 
 # source blocks are generated from your builders; a source can be referenced in
@@ -15,12 +17,12 @@ source "amazon-ebs" "terraform-web-prj-19" {
   region        = var.region
   source_ami_filter {
     filters = {
-      name                = "RHEL-8.2_HVM-20200803-x86_64-0-Hourly2-GP2"
+      name                = "ami-06640050dc3f556bb"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["309956199498"]
+    owners      = ["131321662217"]
   }
   ssh_username = "ec2-user"
   tag {
