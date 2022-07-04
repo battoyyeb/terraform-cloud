@@ -7,6 +7,10 @@ locals {
   timestamp = regex_replace(timestamp(), "[- TZ:]", "")
 }
 
+variable "private_key" {
+    type = string
+    default = "~/.ssh/id_rsa"}
+
 
 # source blocks are generated from your builders; a source can be referenced in
 # build blocks. A build block runs provisioners and post-processors on a
