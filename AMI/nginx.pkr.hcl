@@ -9,6 +9,7 @@ locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 # source blocks are generated from your builders; a source can be referenced in
 # build blocks. A build block runs provisioners and post-processors on a
 # source.
+
 source "amazon-ebs" "terraform-nginx-prj-19" {
   ami_name      = "terraform-nginx-prj-19-${local.timestamp}"
   instance_type = "t2.micro"
