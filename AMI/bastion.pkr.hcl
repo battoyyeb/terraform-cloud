@@ -7,13 +7,14 @@ packer {
   }
 }
 
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
+
 locals {
   timestamp = regex_replace(timestamp(), "[- TZ:]", "")
 }
-
-variable "private_key" {
-    type = string
-    default = "~/.ssh/id_rsa"}
 
 
 # source blocks are generated from your builders; a source can be referenced in
