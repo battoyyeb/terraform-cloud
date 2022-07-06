@@ -1,16 +1,6 @@
-packer {
-  required_plugins {
-    myawesomecloud = {
-      version = ">= 2.7.0"
-      source = "github.com/azr/myawesomecloud"
-    }
-    happycloud = {
-      version = ">= 1.1.3"
-      source = "github.com/azr/happycloud"
-    }
-  }
-}
 
+
+locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 variable "region" {
   type    = string
@@ -22,7 +12,7 @@ variable "region" {
 # build blocks. A build block runs provisioners and post-processors on a
 # source.
 source "amazon-ebs" "terraform-bastion-prj-19" {
-  ami_name      = "terraform-bastion-prj-19"
+  ami_name      = "terraform-bastion-prj-19-${local.timestamp}"
   instance_type = "t2.micro"
   region        = var.region
   source_ami_filter {
