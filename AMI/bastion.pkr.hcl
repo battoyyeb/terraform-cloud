@@ -1,11 +1,16 @@
 packer {
   required_plugins {
-    amazon = {
-      version = ">=1.0.0"
-      source = "github.com/hashicorp/amazon"
+    myawesomecloud = {
+      version = ">= 2.7.0"
+      source = "github.com/azr/myawesomecloud"
+    }
+    happycloud = {
+      version = ">= 1.1.3"
+      source = "github.com/azr/happycloud"
     }
   }
 }
+
 
 variable "region" {
   type    = string
