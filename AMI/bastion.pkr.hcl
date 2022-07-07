@@ -1,19 +1,9 @@
-packer {
-  required_plugins {
-    amazon = {
-      version = ">= 1.0.8"
-      source  = "github.com/hashicorp/amazon"
-    }
-  }
-}
-
-locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
-
 variable "region" {
   type    = string
   default = "us-east-1"
 }
 
+locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
 # source blocks are generated from your builders; a source can be referenced in
 # build blocks. A build block runs provisioners and post-processors on a
@@ -24,12 +14,12 @@ source "amazon-ebs" "terraform-bastion-prj-19" {
   region        = var.region
   source_ami_filter {
     filters = {
-      name                = "RHEL-8.3_HVM-20210209-x86_64-0-Hourly2-GP2"
+      name                = "ami-06640050dc3f556bb"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["309956199498"]
+    owners      = ["1313-2166-2217"]
   }
     ssh_username = "ec2-user"
   tag {
