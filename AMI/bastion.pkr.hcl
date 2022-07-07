@@ -14,12 +14,12 @@ source "amazon-ebs" "terraform-bastion-prj-19" {
   region        = var.region
   source_ami_filter {
     filters = {
-      name                = "ami-06640050dc3f556bb"
+      name                = "RHEL-8.2_HVM-20200803-x86_64-0-Hourly2-GP2"
       root-device-type    = "ebs"
       virtualization-type = "hvm"
     }
     most_recent = true
-    owners      = ["131321662217"]
+    owners      = ["309956199498"]
   }
     ssh_username = "ec2-user"
   tag {
